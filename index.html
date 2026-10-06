@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="HTMLタグとCSSプロパティをすばやく調べられるモダンなリファレンス。">
+  <title>HTML / CSS Property Tag</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="HTML CSS Property Tag">HTML<span>/</span>CSS <b>REFERENCE</b></a>
+    <div class="top-actions"><button class="icon-btn" id="themeBtn" aria-label="テーマ切替">◐</button></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">DEVELOPER REFERENCE</p>
+        <h1>HTML & CSS<br><em>Property Tag.</em></h1>
+        <p class="lead">タグとプロパティを、必要な瞬間に。<br>タップして詳細・書き方・コピーを確認できます。</p>
+      </div>
+      <div class="hero-stats"><span><strong id="totalCount">0</strong><small>ITEMS</small></span><span><strong>HTML</strong><small>TAGS</small></span><span><strong>CSS</strong><small>PROPERTIES</small></span></div>
+    </section>
+
+    <section class="toolbar">
+      <div class="search-wrap"><label class="search"><span>⌕</span><input id="search" type="search" placeholder="タグ・プロパティを検索…" autocomplete="off" aria-autocomplete="list" aria-controls="suggestions"></label><div id="suggestions" class="suggestions" role="listbox" hidden></div></div>
+      <div class="segmented" role="tablist" aria-label="表示切替">
+        <button class="active" data-filter="all">ALL</button><button data-filter="html">HTML</button><button data-filter="css">CSS</button>
+      </div>
+    </section>
+
+    <div class="section-head"><div><p class="eyebrow">REFERENCE</p><h2 id="sectionTitle">All references</h2></div><span id="resultCount"></span></div>
+    <section id="grid" class="grid" aria-live="polite"></section>
+  </main>
+
+  <dialog id="detailDialog">
+    <div class="modal-head"><span id="modalType" class="pill"></span><button class="close" id="closeBtn" aria-label="閉じる">×</button></div>
+    <div class="modal-body">
+      <p class="eyebrow" id="modalCategory"></p><h2 id="modalName"></h2><p id="modalDescription" class="modal-desc"></p>
+      <div class="code-card"><div class="code-head"><span>EXAMPLE</span><button id="copyBtn">COPY</button></div><pre><code id="modalCode"></code></pre></div>
+    </div>
+  </dialog>
+  <div class="toast" id="toast">Copied</div>
+  <script src="app.js"></script>
+</body>
+</html>
